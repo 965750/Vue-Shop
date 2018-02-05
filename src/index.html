@@ -14,16 +14,23 @@
         <i v-on:click="{ buy = !buy }" class="fas fa-cart-arrow-down"></i>
         <div class="lineBorder"></div>
         <div v-show="!buy">
-            <div class="cartCont"></div>
+            <div class="cartCont">
+                <div v-for="single in card">
+                    <div class="singlePrice">
+                    <span class="singlePriceNo">{{ single.price }}</span>
+                    <span class="singlePriceName">{{ single.name }}</span>
+                    </div>
+                </div>
+            </div>
         </div>
         <div v-show="buy" class="ProdCont">
-            <div class="singleCont" v-for="product in products">
+            <div class="singleCont" v-for="(product, index) in products">
                 <div class="singleTop" v-bind:style="{ 'background-image': 'url(' + product.img + ')' }"></div>
                 <div class="singleBot">
                     <p class="singleBotName">{{ product.name }}</p>
                     <p class="singleBotDesc">{{ product.desc }}</p>
                     <p class="singleBotCost">{{ product.cost }}PLN</p>
-                    <button class="singleBotBtn">Add to Cart</button>
+                    <button class="singleBotBtn" v-on:click="checkPrice(index)">Add to Cart</button>
                 </div>
             </div>   
         </div> 

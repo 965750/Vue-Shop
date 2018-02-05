@@ -21,6 +21,9 @@ new Vue({
                 cost: 3.99,
                 img: 'img/tomato.jpg'
             }
+        ],
+        card: [
+            
         ]
     },
     methods: {
@@ -62,6 +65,14 @@ new Vue({
                 }
             }
         },
+        checkPrice: function(index){
+            
+            this.card.push({
+                index: index,
+                price: this.products[index].cost,
+                name: this.products[index].name
+            });
+        }
     },
     computed: {
 
