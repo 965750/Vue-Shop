@@ -1,0 +1,152 @@
+body {
+  margin: 0px;
+  font-family: 'Roboto', sans-serif; }
+
+.ProdCont {
+  margin: 25px auto;
+  width: 1000px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+  .ProdCont .singleCont {
+    margin: 10px auto;
+    height: 200px;
+    width: 300px;
+    background: crimson;
+    border-radius: 10px; }
+    .ProdCont .singleCont .singleTop {
+      height: 60%;
+      background-color: #c31c3d;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      border-bottom: 1px solid #ff0000;
+      background-repeat: no-repeat;
+      background-position: center; }
+    .ProdCont .singleCont .singleBot {
+      position: relative; }
+      .ProdCont .singleCont .singleBot .singleBotName {
+        margin: 0px;
+        margin-top: 2px;
+        text-transform: uppercase;
+        text-align: center;
+        color: white;
+        font-size: 20px; }
+      .ProdCont .singleCont .singleBot .singleBotDesc {
+        color: white;
+        margin: 0px auto;
+        padding-bottom: 3px;
+        font-size: 13px;
+        text-align: center;
+        width: 90%;
+        border-bottom: 1px solid red; }
+      .ProdCont .singleCont .singleBot .singleBotCost {
+        text-align: right;
+        margin: 10px 10px 0px 0px;
+        color: white;
+        font-weight: 700; }
+      .ProdCont .singleCont .singleBot .singleBotBtn {
+        position: absolute;
+        bottom: 0px;
+        left: 5px;
+        outline: none;
+        border: 0px solid red;
+        background-color: #ff2f58;
+        height: 25px;
+        width: 100px;
+        color: white;
+        font-weight: 700;
+        border-radius: 5px; }
+        .ProdCont .singleCont .singleBot .singleBotBtn:hover {
+          background-color: #ff4c6f;
+          cursor: pointer; }
+
+.addProdCont {
+  height: 310px;
+  width: 280px;
+  background-color: crimson;
+  border-radius: 10px;
+  margin: 20px auto;
+  padding: 10px; }
+  .addProdCont input {
+    outline: none;
+    border: 0px solid red;
+    background-color: #c10e31;
+    height: 20px;
+    width: 250px;
+    padding: 5px;
+    color: white;
+    display: block;
+    font-size: 15px;
+    border-radius: 5px;
+    margin: 5px auto; }
+    .addProdCont input:hover {
+      background-color: #c71538; }
+    .addProdCont input:focus {
+      -webkit-box-shadow: 0px 0px 3px #ffcfd9;
+              box-shadow: 0px 0px 3px #ffcfd9; }
+    .addProdCont input::-webkit-input-placeholder {
+      color: #951c34; }
+    .addProdCont input:-ms-input-placeholder {
+      color: #951c34; }
+    .addProdCont input::-ms-input-placeholder {
+      color: #951c34; }
+    .addProdCont input::placeholder {
+      color: #951c34; }
+  .addProdCont input[type=number] {
+    width: 50px;
+    margin: 5px 0px 5px 10px; }
+  .addProdCont span {
+    width: 200px;
+    margin-left: 10px;
+    color: white;
+    font-weight: 700; }
+  .addProdCont .addProdBtn {
+    margin: auto;
+    border: 0px solid red;
+    width: 260px;
+    height: 40px;
+    display: block;
+    margin-top: 5px;
+    color: white;
+    font-weight: 700;
+    border-radius: 5px;
+    background-color: #ff2f58;
+    font-size: 20px;
+    -webkit-box-shadow: 0px 0px 2px white;
+            box-shadow: 0px 0px 2px white; }
+    .addProdCont .addProdBtn:hover {
+      -webkit-box-shadow: 0px 0px 5px white;
+              box-shadow: 0px 0px 5px white;
+      cursor: pointer;
+      background-color: #ff4c6f; }
+  .addProdCont .errOut {
+    height: 20px;
+    width: 99%;
+    text-align: center;
+    margin: auto;
+    font-size: 11px;
+    color: black; }
+
+.tip {
+  font-size: 11px;
+  font-weight: 400 !important;
+  color: #edacac !important; }
+
+.fas {
+  font-size: 70px;
+  color: crimson;
+  width: 70px;
+  height: 70px;
+  margin: 20px 10px 10px 90%; }
+  .fas:hover {
+    cursor: pointer;
+    color: #f0204a; }
+
+.lineBorder {
+  width: 100%;
+  height: 0px;
+  border-bottom: 3px solid crimson;
+  -webkit-box-shadow: 0px 2px 3px #a04859;
+          box-shadow: 0px 2px 3px #a04859; }

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VueJS SHOP</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;subset=latin-ext" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+</head>
+<body>
+    <div id="vue-app">
+        <i v-on:click="{ buy = !buy }" class="fas fa-cart-arrow-down"></i>
+        <div class="lineBorder"></div>
+        <div v-show="!buy">
+            <div class="cartCont"></div>
+        </div>
+        <div v-show="buy" class="ProdCont">
+            <div class="singleCont" v-for="product in products">
+                <div class="singleTop" v-bind:style="{ 'background-image': 'url(' + product.img + ')' }"></div>
+                <div class="singleBot">
+                    <p class="singleBotName">{{ product.name }}</p>
+                    <p class="singleBotDesc">{{ product.desc }}</p>
+                    <p class="singleBotCost">{{ product.cost }}PLN</p>
+                    <button class="singleBotBtn">Add to Cart</button>
+                </div>
+            </div>   
+        </div> 
+        <div v-show="buy" class="addProdCont">
+            <span>Name of product</span>   
+            <input ref="npInput" placeholder="Name..." type="text">
+            <span>Description of product</span> 
+            <input ref="dpInput" placeholder="Description..." type="text"> 
+            <span>Price</span> 
+            <input ref="aInput" placeholder="PLN" type="number">
+            <span>Image url <span class="tip">(leave empty for default image)</span></span> 
+            <input ref="imgInput" type="text" placeholder="Link...">
+            <div class="errOut" id="errOut"></div>
+            <button v-on:click="readRefs" class="addProdBtn">Add to Product list</button>
+        </div>   
+    </div>
+    <script src="js/app.js"></script>
+</body>
+</html>
