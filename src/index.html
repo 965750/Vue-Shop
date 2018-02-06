@@ -11,25 +11,40 @@
 </head>
 <body>
     <div id="vue-app">
-        <i v-on:click="{ buy = !buy }" class="fas fa-cart-arrow-down"></i>
+        <div class="appOpt">
+            <div class="plusAniCont"><span id="oneUp">+1</span></div>   
+            <i v-on:click="buy = !buy" class="fas fa-cart-arrow-down"></i>
+        </div>
         <div class="lineBorder"></div>
+        
+        <!-- card -->
         <div v-show="!buy">
             <div class="cartCont">
-                <div v-for="single in card">
+                <p class="emptyText" v-show="empty">First You need to add some products</p>
+                <div v-for="(single, index) in card">
                     <div class="singlePrice">
-                    <span class="singlePriceNo">{{ single.price }}</span>
-                    <span class="singlePriceName">{{ single.name }}</span>
+                        <div class="singlePriceNo">
+                            <span>{{ single.price }} PLN</span>
+                        </div>
+                        <div class="singlePriceName">
+                            <span>{{ single.name }}</span>
+                        </div>
+                        <div class="singlePriceSpace"></div>
+                        <div class="deleteBtn"><button v-on:click="deleteProduct(index)">Delete product</button></div>
                     </div>
                 </div>
+                <div v-show="!empty" class="fullCost"><span>{{ fullCost }} PLN</span></div>
             </div>
         </div>
+        
+        <!-- shop -->
         <div v-show="buy" class="ProdCont">
             <div class="singleCont" v-for="(product, index) in products">
                 <div class="singleTop" v-bind:style="{ 'background-image': 'url(' + product.img + ')' }"></div>
                 <div class="singleBot">
                     <p class="singleBotName">{{ product.name }}</p>
                     <p class="singleBotDesc">{{ product.desc }}</p>
-                    <p class="singleBotCost">{{ product.cost }}PLN</p>
+                    <p class="singleBotCost">{{ product.cost }} PLN</p>
                     <button class="singleBotBtn" v-on:click="checkPrice(index)">Add to Cart</button>
                 </div>
             </div>   

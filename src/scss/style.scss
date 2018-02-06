@@ -149,12 +149,51 @@ body {
     color: #edacac !important;
 }
 
+.appOpt {
+    display: flex;
+    flex-direction: row-reverse
+}
+
+.plusAniCont {
+    width: 40px;
+    height: 70px;
+    margin: 20px 10px 10px 10px;
+    position: relative;
+    span {
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        color: crimson;
+        font-weight: 700;
+        font-size: 20px;
+        opacity: 0;
+    }
+}
+.plusOne{
+    animation: plusOne 2s;
+}
+
+@keyframes plusOne {
+    0%{ 
+        opacity: 0;
+        transform: translateY(0);
+    }
+    40%{ 
+        opacity: 1;
+        transform: translateY(-20px);
+    }
+    100%{
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+}
+
 .fas {
     font-size: 70px;
     color: crimson;
     width: 70px;
     height: 70px;
-    margin: 20px 10px 10px 90%;
+    margin: 20px 10px 10px 10px;
     &:hover {
         cursor: pointer;
         color: #f0204a;
@@ -167,27 +206,76 @@ body {
     border-bottom: 3px solid crimson;
     box-shadow: 0px 2px 3px #a04859;
 }
+
 .cartCont {
-	width: 800px;
-    min-height: 200px;
+    width: 600px;
+    min-height: 100px;
     background-color: crimson;
     margin: 10px auto;
     border-radius: 10px;
 }
-.singlePrice{
+
+.singlePrice {
     color: white;
     width: 90%;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid red;
     height: 30px;
     margin: auto;
-    
+    display: flex;
+
     .singlePriceNo {
         font-size: 25px;
-        padding: 5px;
-	
-}
+        padding: 0px;
+        width: 130px;
+
+    }
     .singlePriceName {
-	    font-size: 20px;
+        font-size: 20px;
         padding-left: 20px;
+        width: 150px;
+        padding: 4px 0px 0px 0px;
+    }
+    .singlePriceSpace {
+        width: 30%;
+    }
+    .deleteBtn {
+        button {
+            outline: none;
+            border: 0px solid red;
+            background-color: #ff2f58;
+            height: 25px;
+            width: 120px;
+            color: white;
+            font-weight: 700;
+            border-radius: 5px;
+            font-size: 13px;
+            margin-top: 2px;
+
+            &:hover {
+                background-color: #ff4c6f;
+                cursor: pointer;
+            }
+        }
+    }
 }
+
+.fullCost {
+    width: 130px;
+    border-top: 1px solid red;
+    margin: 40px 0px 0px 0px;
+    padding: 0px 0px 5px 20px;
+
+    span {
+        color: white;
+        font-weight: 700;
+        font-size: 20px;
+    }
+}
+
+.emptyText {
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 35px;
 }
