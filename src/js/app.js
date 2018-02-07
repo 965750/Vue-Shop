@@ -21,7 +21,7 @@ new Vue({
             {
                 name: 'tomato',
                 desc: 'just an simple expensive tomato',
-                cost: 3.99,
+                cost: 3.49,
                 img: 'img/tomato.jpg'
             }
         ],
@@ -72,17 +72,34 @@ new Vue({
         },
         checkPrice: function(index){
             
+            var oneUp = (document).getElementById("oneUp");
+            var twoUp = (document).getElementById("twoUp");
+
             this.cardCount += 1;
             this.empty = false;
             this.fullCost = this.fullCost + this.products[index].cost;
             this.fullCost = Math.round(this.fullCost * 100) / 100;
-            //(document).getElementById(oneUp).classList.add(plusOne);
             
+            if(oneUp.classList.contains("plusOne") == 0){
+            
+                oneUp.classList.add("plusOne");
+                setTimeout(refreshOneUp, 1000);
+            } else {
+                twoUp.classList.add("plusOne");
+                setTimeout(refreshTwoUp, 1000);
+            }
             this.card.push({
                 index: index,
                 price: this.products[index].cost,
                 name: this.products[index].name
             });
+            
+            function refreshOneUp(){
+            oneUp.classList.remove("plusOne");    
+            }
+            function refreshTwoUp(){
+            twoUp.classList.remove("plusOne");    
+            }
         },
         deleteProduct: function(index){
             

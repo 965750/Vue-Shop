@@ -158,8 +158,8 @@ body {
     opacity: 0; }
 
 .plusOne {
-  -webkit-animation: plusOne 2s;
-          animation: plusOne 2s; }
+  -webkit-animation: plusOne 1s;
+          animation: plusOne 1s; }
 
 @-webkit-keyframes plusOne {
   0% {
